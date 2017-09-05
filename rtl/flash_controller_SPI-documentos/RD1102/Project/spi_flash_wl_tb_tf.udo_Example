@@ -1,0 +1,8 @@
+-- ispLEVER Verilog Timing Simulation Template: spi_flash_wl_tb_tf.udo.
+-- You may edit this file to control your simulation.
+-- You may specify your design unit.
+-- You may specify your waveforms.
+vsim +access +r -L ovi_machxo2 -PL pmi_work +transport_path_delays +transport_int_delays -sdfnoerror -sdfmax uut0=spi_flash_controller_wl_top.sdf spi_flash_wl_tb +no_tchk_msg -noglitch
+add wave *
+-- You may specify your simulation run time.
+run 1000 ns

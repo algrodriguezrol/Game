@@ -1,0 +1,52 @@
+[*]
+[*] GTKWave Analyzer v3.3.58 (w)1999-2014 BSI
+[*] Tue May 23 19:48:00 2017
+[*]
+[dumpfile] "/home/diego/git/Secador/simulation/system_tb.vcd"
+[dumpfile_mtime] "Tue May 23 19:38:17 2017"
+[dumpfile_size] 91199357
+[savefile] "/home/diego/git/Secador/system_tb.vcd.save.sav"
+[timestart] 20359000
+[size] 1280 776
+[pos] -1 -1
+*-17.786350 20850000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] system_tb.
+[treeopen] system_tb.dut.
+[sst_width] 223
+[signals_width] 142
+[sst_expanded] 1
+[sst_vpaned_height] 222
+@22
+system_tb.dut.gpio0.wb_adr_i[31:0]
+@c00022
+system_tb.dut.conbus0.slave_sel[5:0]
+@28
+(0)system_tb.dut.conbus0.slave_sel[5:0]
+(1)system_tb.dut.conbus0.slave_sel[5:0]
+(2)system_tb.dut.conbus0.slave_sel[5:0]
+(3)system_tb.dut.conbus0.slave_sel[5:0]
+(4)system_tb.dut.conbus0.slave_sel[5:0]
+(5)system_tb.dut.conbus0.slave_sel[5:0]
+@1401200
+-group_end
+@22
+system_tb.dut.uart0.wb_dat_i[31:0]
+@29
+system_tb.dut.uart0.wb_wr
+@28
+system_tb.dut.uart0.tx_busy
+@c00022
+system_tb.dut.uart0.ucr[7:0]
+@28
+(0)system_tb.dut.uart0.ucr[7:0]
+(1)system_tb.dut.uart0.ucr[7:0]
+(2)system_tb.dut.uart0.ucr[7:0]
+(3)system_tb.dut.uart0.ucr[7:0]
+(4)system_tb.dut.uart0.ucr[7:0]
+(5)system_tb.dut.uart0.ucr[7:0]
+(6)system_tb.dut.uart0.ucr[7:0]
+(7)system_tb.dut.uart0.ucr[7:0]
+@1401200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0

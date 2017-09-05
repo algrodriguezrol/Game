@@ -1,0 +1,42 @@
+
+# ==== Cloclk inputs (CLK) ====
+
+NET "clk"   LOC = "E3"	| IOSTANDARD = "LVCMOS33";
+NET "clk" TNM_NET = sys_clk;
+TIMESPEC TS_sys_clk = PERIOD sys_clk_pin 100 MHz HIGH 50%; 
+
+NET "rst"	LOC = "C12"	| IOSTANDARD = "LVCMOS33";
+NET "led"	LOC = "P2"	| IOSTANDARD = "LVCMOS33";
+
+# ==== UART ====
+#pin para la salida del calbel microSD
+NET "uart_txd1"	LOC = "D4"	| IOSTANDARD = "LVCMOS33";	
+#pines para la conexión del moduro esp8266
+NET "uart_txd"	LOC = "J3"	| IOSTANDARD = "LVCMOS33";	
+NET "uart_rxd"	LOC = "J4"	| IOSTANDARD = "LVCMOS33";	
+
+# ==== SPI ====
+NET "spi_miso"	LOC = "D17"	| IOSTANDARD = "LVCMOS33";	
+NET "spi_mosi"	LOC = "F14"	| IOSTANDARD = "LVCMOS33";	
+NET "spi_clk"	LOC = "B13"	| IOSTANDARD = "LVCMOS33";
+# ==== I2C ====
+NET "sda"	LOC = "K2"	| IOSTANDARD = "LVCMOS33";
+NET "scl"	LOC = "E7"	| IOSTANDARD = "LVCMOS33";
+
+#=====I2C info====
+NET "doneR"	LOC = "T8"| IOSTANDARD = "LVCMOS33";
+NET "doneW"	LOC = "V9"| IOSTANDARD = "LVCMOS33";
+NET "busyR"	LOC = "R8"| IOSTANDARD = "LVCMOS33";
+NET "busyW"	LOC = "T6"| IOSTANDARD = "LVCMOS33";
+#=======salidas del periferico que encontré y que estaba modificado
+NET "led_i2c<7>"	LOC = "U7"| IOSTANDARD = "LVCMOS33";
+NET "led_i2c<6>"	LOC = "U6"| IOSTANDARD = "LVCMOS33";
+NET "led_i2c<5>"	LOC = "V4"| IOSTANDARD = "LVCMOS33";
+NET "led_i2c<4>"	LOC = "U3"| IOSTANDARD = "LVCMOS33";
+NET "led_i2c<3>"	LOC = "V1"| IOSTANDARD = "LVCMOS33";
+NET "led_i2c<2>"	LOC = "R1"| IOSTANDARD = "LVCMOS33";
+NET "led_i2c<1>"	LOC = "P5"| IOSTANDARD = "LVCMOS33";
+NET "led_i2c<0>"	LOC = "U1"| IOSTANDARD = "LVCMOS33";
+
+#======== verificación de la interrupción ==========
+NET "ledint"	LOC = "R2"| IOSTANDARD = "LVCMOS33";

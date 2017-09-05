@@ -1,0 +1,209 @@
+/**
+ * 
+ */
+
+#include "soc-hw.h"
+//---------------------------------------------------------------------------
+// LCD Functions
+//---------------------------------------------------------------------------
+
+void writeCharlcd (char letter) 
+{
+	char highnib;
+	char lownib;
+	highnib = letter&0xF0;
+	lownib = letter&0x0F;
+
+	i2c_write_lcd(ADDRESS_I2C_LCD,highnib|0b00001001);
+	i2c_write_lcd(ADDRESS_I2C_LCD,highnib|0b00001101);
+	i2c_write_lcd(ADDRESS_I2C_LCD,highnib|0b00001001);  
+
+	i2c_write_lcd(ADDRESS_I2C_LCD,(lownib<<4)|0b00001001);
+	i2c_write_lcd(ADDRESS_I2C_LCD,(lownib<<4)|0b00001101);
+	i2c_write_lcd(ADDRESS_I2C_LCD,(lownib<<4)|0b00001001);
+
+	msleep(2);
+}
+
+void writeCommandlcd (char command) 
+{
+	char highnib;
+	char lownib;
+	highnib = command&0xF0;
+	lownib = command&0x0F;
+
+	i2c_write_lcd(ADDRESS_I2C_LCD,highnib|0b00001000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,highnib|0b00001100);
+	i2c_write_lcd(ADDRESS_I2C_LCD,highnib|0b00001000);  
+
+	i2c_write_lcd(ADDRESS_I2C_LCD,(lownib<<4)|0b00001000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,(lownib<<4)|0b00001100);
+	i2c_write_lcd(ADDRESS_I2C_LCD,(lownib<<4)|0b00001000);
+
+	msleep(2);
+}
+
+void writeStringlcd (char *str) {
+	char *c = str;
+	while(*c) {
+		writeCharlcd(*c);
+		c++;
+	}
+}
+
+void lcdInit ()
+{  
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00111000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00111100);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00111000);
+	nsleep(4500000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00111000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00111100);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00111000);
+	nsleep(4500000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00111000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00111100);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00111000);
+	nsleep(200000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00101000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00101100);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00101000);
+	nsleep(50000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00101000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00101100);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00101000);
+	nsleep(50000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b10001000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b10001100);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b10001000);
+	nsleep(50000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00001000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00001100);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b00001000);
+	nsleep(50000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b11001000);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b11001100);
+	i2c_write_lcd(ADDRESS_I2C_LCD,0b11001000);
+	msleep(2);
+}
+
+//---------------------------------------------------------------------------
+// LCD Commands
+//---------------------------------------------------------------------------
+
+void clearDisplay() 
+{	writeCommandlcd(0b00000001);
+}
+
+void returnHome()
+{	writeCommandlcd(0b00000010);
+}
+
+void entryModeSet2()
+{  	writeCommandlcd(0b00000110);
+}
+
+void entryModeSet()
+{	writeCommandlcd(0b00000111);
+}
+
+void entryModeSet3()
+{	writeCommandlcd(0b00000100);
+}
+
+void entryModeSet4()
+{	writeCommandlcd(0b00000101);
+}
+
+void displayOff()
+{	writeCommandlcd(0b00001000);
+}
+
+void displayOn()
+{	writeCommandlcd(0b00001111);
+}
+
+void cursorShiftRight()
+{	writeCommandlcd(0b00010100);
+}
+
+void cursorShiftLeft()
+{	writeCommandlcd(0b00010000);
+}
+
+void displayShiftRight()
+{	writeCommandlcd(0b00011100);
+}
+
+void displayShiftLeft()
+{	writeCommandlcd(0b00011000);
+}
+
+void functionSet()
+{	writeCommandlcd(0b00101000);
+}
+
+void displayAddress(uint8_t col, uint8_t row){
+	int row_offsets[] = { 0x00, 0x40, 0x14, 0x54 };
+	if(row>2){
+		row = 2-1;
+	}
+        writeCommandlcd (0x80|(col + row_offsets[row]));
+}
+//---------------------------------------------------------------------------
+// ASCII Converter 
+//---------------------------------------------------------------------------
+
+char asciiConv (char number)
+{	return number+48;
+}
+
+char asciiConvLcd_Dig1 (char number)
+{	char highnib;
+	char lownib;
+	highnib = number&0xF0;
+	lownib = number&0x0F;
+	return (lownib)+48;
+}
+
+char asciiConvLcd_Dig2 (char number)
+{	char highnib;
+	char lownib;
+	highnib = number&0xF0;
+	lownib = number&0x0F;
+	return (highnib >> 4)+48;
+}
+
+
+//---------------------------------------------------------------------------
+// Main project 1
+//---------------------------------------------------------------------------
+
+int main(){
+	//TODO realizar interrupciones para el WIFI
+	
+	//Ya todo esto está funcionando
+	/*
+	init_wifi();
+
+
+	lcdInit();
+	clearDisplay();
+	entryModeSet2();
+	returnHome();*/
+
+while(1){
+	
+	//inicio de pruebas para el periferico SPI
+	spi_putchar('a');
+	
+	/*
+	writeStringlcd("Secador cafe");
+	displayAddress(0,1);
+	writeCharlcd('T');
+	writeCharlcd(0xDF); //para imprimir el cáracter º 
+	writeStringlcd(": no data");
+	msleep (1000);
+	returnHome();*/
+	}
+}
