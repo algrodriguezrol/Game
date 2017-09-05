@@ -1,0 +1,275 @@
+\documentclass[twocolumn,11pt]{IEEEtran}
+\usepackage[spanish]{babel,varioref}
+\selectlanguage{spanish}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage{amssymb,amsfonts}
+\usepackage[tbtags]{amsmath}
+\usepackage{cite}
+\usepackage{float}
+\setlength{\columnsep}{7mm}
+
+%-----------------------------------------------------------------------
+
+%-----------------------------------------------------------------------
+\begin{document}
+\title{Guía de Laboratorio No. 1\\Definiciones Básicas en Electrónica}
+\author{Albin Gonzalo Rodriguez\\Onalber Arias\\ Johanny Amaya\\
+Taller de Ingenieria Electronica\\ Docente: Jose Ali Rodriguez Céspedes\\ Universidad Nacional de Colombia - Sede Bogota\\
+Departamento de Ingeniería Eléctrica, Electrónica y Computación\\}
+\maketitle
+
+
+
+\begin{abstract}
+This report presents the source overlay
+technique used when making a circuital analysis, this
+technique provides the basis to then be used in the
+theorem of analysis of Ohm.
+\end{abstract}
+
+
+\section{Palabras claves}
+
+Resistencias, Voltaje, Corriente, Ley de Ohm y Diodo Led.
+
+
+\section{Introduccion}
+
+Con la ley de Ohm vamos a entender la relacion que hay entre el Voltaje, la Corriente y la Resistencia. Y asi podemos hacer las mediciones correctas para comprobar la ley. Y para entender el funcionamiento de la protoboard, el diodo led, las resistensias y las fuetes.
+
+\section{Marco teorico}
+
+Los componentes electronicos son utilizados en las practicas electronicas y se pueden dividir en dos tipos, elementos activos y elementos pasivos. Los activos son los que generan algun tipo de flujo de electrones como lo pueden ser: fuentes, generador de señales o detector, amplificadores. Y los elementos pasivos son los que se oponen al flujo de electrones como lo pueden ser: Resistencias, condensadores, inductores y transformadores.
+
+
+\subsection{Ley de Ohm}
+
+La ley de Ohm establece que un relacion entre la corriente electrica (flujo de carga por unidad de tiempo que recorre un material, se debe al flujo de electrones en el interior del material) la tension electrica o diferencia de potencial (el trabajo por unidad de carga ejercido por el campo eléctrico sobre una partícula cargada para moverla entre dos posiciones determinadas) tambien denominada como voltaje, la resistencia eletrica (es una oposicion al flujo de electrones o cerriente) y la conductancia eletrica (material o mecanismo en mediente el cual la carga fluye). La ley de Ohm nos dice que la corriente electrica que circula en dos puntos de un circuito electrico es directamente proporcional a la tension entre dichos puntos, teniendo en cuenta que hay una constante de proporcionalidad, que es la conductancia electrica, que es inversa a la resistencia electrica.
+
+Su ecuacion es:
+\begin{equation*}
+    V=R*I
+\end{equation*}
+
+La ecuacion quiere decir que el voltaje o la tension entre esos dos puntos es igual al producto que hay entre la resistencia y la corriente electrica.
+
+\section{Procedimiento}
+\subsection{Medición de Voltaje}
+
+\begin{figure}
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=7cm,height=5cm]{fig8.jpg}\\
+  \caption{Montaje 1.}\label{fig:8}
+\end{figure}
+
+Lo que nos dice el Voltimetro es una magnidud y la direccion que toma la corriente, si el voltimetro nos dice una magnitud negativa quiere decir que la corriente va en el otro sentido. Casi siempre la corriente fluye de positivo a negativo.
+
+\subsection{Medición de Resistencias}
+
+\begin{figure}
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=7cm,height=5cm]{fig9.jpg}\\
+  \caption{Montaje 2.}\label{fig:9}
+\end{figure}
+
+
+\begin{center}
+{\bf Tabla 1}
+\end{center}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+  \hline
+
+  Resistencia & Valor Nominal & Valor Real \\ \hline
+   R1 &  &  \\ \hline
+   R2 &  &  \\ \hline
+   R3 &  &  \\ \hline
+   R4 &  & \\ \hline
+   R5 &  &  \\ \hline
+   R6 &  &  \\ \hline
+   R7 &  &  \\ \hline
+   R8 &  &  \\ \hline
+   R9 &  &  \\ \hline
+   R10 &  &  \\
+  \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\subsubsection{Error Porcentual}
+
+\[\% E = |\frac{{ValorTeorico - Valor\Pr actico}}{{ValorTeorico}}|*100\]\\
+\begin{itemize}
+\item Error por cada Resistencia
+\[\begin{array}{l}
+
+\% ER_1 = 1,42\%\\
+\\
+\% ER_2 = 0\%\\
+\\
+\% ER_3 = 0,1\%\\
+\\
+\% ER_4 = 1\%\\
+\\
+\% ER_5 = 1,9\%\\
+\\
+\% ER_6 = 1\%\\
+\\
+\% ER_7 = 0\%\\
+\\
+\% ER_8 = 1,2\%\\
+\\
+\% ER_9 = 1,5\%\\
+\\
+\% ER10 = 1,5\%\\
+\\
+
+\end{array}\]% MathType!End!2!1!
+\end{itemize}
+
+
+
+\begin{itemize}
+  \item ¿Estan estas resistencias dentro de la tolerancia especificada por el fabricante?¿En caso contrario indague por que no?
+Teniendo en cuenta los cálculos de error o tolerancia, nosotros suponemos que las resistencias están dentro de la tolerancia especificada por el fabricante.
+
+  \item Mida la resistencia de las puntas del multimetro.¿Son realmente un corto circuito? ¿afecta esto la medida?
+Realmente no son un corto circuito ya que nos da una medición. Se dice que hay un corto circuito cuando hay una resistencia infinita, osea pasa la corriente directamente, y generalmente es cuando un elemento pasivo esta conectado en un mismo nodo.
+
+  \item Mida la resistencia de las puntas del Alambre.¿Es 100\% conductor?
+No es muy confiable hacer lo dicho ya que no es 100\% conductor.
+
+  \item Mida la resistencia del diodo que se pidío en la práctica. Invierta las puntas del multímetro y repita la medida. ¿Es aislante o conductor?
+
+  \item Haga lo anterior con el LED.
+
+\end{itemize}
+
+\subsection{Medición de Corriente y Voltaje}
+
+Se tomo la resistencia No 1  = 560$\Omega$ y una pila de 1.5v. como se muestra en la siguiente simulación.\\
+
+\begin{figure}
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=7cm,height=5cm]{fig11.jpg}\\
+  \caption{Montaje 3.}\label{fig:10}
+\end{figure}
+
+Haciendo dichas mediciones se obtienen los siguientes resultados.
+
+\begin{center}
+{\bf Tabla 2}
+\end{center}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+  \hline
+
+  Resistencia [$\Omega$] & Voltaje [V] & Corriente [mA]\\ \hline
+  560 & 1,5 & 2,67 \\
+  \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{itemize}
+  \item Cambiando la polaridad vamos a ver que el sentido de la corriente es de positivo hacia negativo.
+\end{itemize}
+
+\begin{figure}
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=7cm,height=5cm]{fig10.jpg}\\
+  \caption{Montaje 4.}\label{fig:11}
+\end{figure}
+
+Teniendo en cuenta que la resistencias tiene un valor nominal de 560$\Omega.$ vamos a obtener los siguientes resultados.
+
+\begin{center}
+{\bf Tabla 3}
+\end{center}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|}
+  \hline
+
+  Voltaje[V] & Corriente[mA] \\ \hline
+   5 & 8,92 \\ \hline
+   6 & 10,71 \\ \hline
+   7 & 12,45 \\ \hline
+   8 & 14,28 \\ \hline
+   9 & 16,07 \\ \hline
+   10 & 17,85 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{itemize}
+  \item Para cada punto calcule la relación R=V/I. ¿Se mantiene respecto a la resistencia medida directamente con el óhmetro?
+\end{itemize}
+
+Ya que las resistencas tiene un porcentaje de error, y al mismo tiempo nosotros hacemos unos calculos matematicos que tambien tiene un porcentaje de error. Esta relacion si se mantiene pero nunca va a ser un valor igual, ya que tenemos errores porcentuales.
+
+El valor real de la resistencia es 568$\Omega$.
+
+
+
+\subsection{Montaje en protoboard y medición sobre LED}
+
+\begin{figure}
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=7cm,height=5cm]{fig13.jpg}\\
+  \caption{Montaje 5.}\label{fig:13}
+\end{figure}
+
+Haciendo el montaje anterior vamos a obtener los siguientes resultados.
+
+\begin{center}
+{\bf Tabla 4}
+\end{center}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+  \hline
+
+  Voltaje Fuente[V] &Voltaje Led[V] & Corriente Led[mA] \\ \hline
+  5 & 2,04 & 13,44 \\ \hline
+  6 & 2,05 & 17,94  \\ \hline
+  7 & 2,07 & 22,42 \\ \hline
+  8 & 2,08 & 26,90 \\ \hline
+  9 & 2,09 & 31,39 \\ \hline
+  10 & 2,11 & 35,87 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{itemize}
+  \item Invierta la polaridad de la fuente y discuta sobre lo que ocurre en el circuito.
+Discutiendo con los compañeros de grupo tenemos la siguiente conclusion.
+
+En el circuito cambia la direccion de la corriente, por lo tanto vamos a tener valores negativos.
+
+\end{itemize}
+
+\section{Consulta}
+
+\section{Conclusiones}
+\begin{itemize}
+  \item En conclusion entendemos que el comportamiento de los voltajes son directamente proporcionales a las corrientes, y que hay un factor o una constante que siempre va a estar que se le llama resistencia. Entonces el Comportamiento va a ser V=R*I.
+  \item Tambien podemos apreciar que el voltaje o la diferencia de tension se va a repartir entre los elementos pasivos. Y la corriente eléctrica va a ser la misma ya que es un flujo de electrones que van en un sentido. 
+  \item Podemos apreciar que los calculos van a tener siempre errores porcentuales, sistematicos. etc. Ya que no va aser tan exacto.
+\end{itemize}
+
+\section{Bibliografia}
+
+\begin{itemize}
+  \item Encarta 2009. Reservados Todos los derechos.
+  \item Guia de laboratorio No1. 
+  \item Introduccion al analisis de circuitos - Boylestad - 10 Edicion.
+\end{itemize}
+
+\end{document}

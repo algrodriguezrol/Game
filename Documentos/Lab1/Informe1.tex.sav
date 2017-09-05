@@ -1,0 +1,62 @@
+\documentclass[twocolumn,10pt]{IEEEtran}
+\usepackage[spanish]{babel,varioref}
+\selectlanguage{spanish}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage{amssymb,amsfonts}
+\usepackage[tbtags]{amsmath}
+\usepackage{cite}
+\usepackage{float}
+\setlength{\columnsep}{7mm}
+
+%-----------------------------------------------------------------------
+
+%-----------------------------------------------------------------------
+\begin{document}
+\title{Laboratorio 01}
+\author{Jimmy Alejandro Alvarez G.\\Santiago Tabarez Martínez\\ Carlos Mauricio Toro Herrera\\
+Sistemas Digitales\\ Docente: Jose Ali Rodriguez Céspedes\\ Monitor: Keyan Byyyk Cavieles Reina \\ Universidad Nacional de Colombia - Sede Bogota\\ Laboratorio 1,20 de marzo de 2012}
+\maketitle
+
+
+
+\begin{abstract}
+This report presents the source overlay
+technique used when making a circuital analysis, this
+technique provides the basis to then be used in the
+theorem of analysis of Ohm.
+\end{abstract}
+
+
+\section{Palabras claves}
+\begin{itemize}
+	\item Resistencias, Voltaje, Corriente, Ley de Ohm y Diodo Led.
+\end{itemize}
+
+\section{Introduccion}
+
+Con la ley de Ohm vamos a entender la relacion que hay entre el Voltaje, la Corriente y la Resistencia. Y asi podemos hacer las mediciones correctas para comprobar la ley. Y para entender el funcionamiento de la protoboard, el diodo led, las resistensias y las fuetes.
+
+\section{Marco teorico}
+
+Los componentes electronicos son utilizados en las practicas electronicas
+
+
+\subsection{Ley de Ohm}
+
+La ley de Ohm establece que un relacion entre la corriente electrica (flujo de carga por unidad de tiempo que recorre un material, se debe al flujo de electrones en el interior del material) la tension electrica o diferencia de potencial (el trabajo por unidad de carga ejercido por el campo eléctrico sobre una partícula cargada para moverla entre dos posiciones determinadas) tambien denominada como voltaje, la resistencia eletrica (es una oposicion al flujo de electrones o cerriente) y la conductancia eletrica (material o mecanismo en mediente el cual la carga fluye). La ley de Ohm nos dice que la corriente electrica que circula en dos puntos de un circuito electrico es directamente proporcional a la tension entre dichos puntos, teniendo en cuenta que hay una constante de proporcionalidad, que es la conductancia electrica, que es inversa a la resistencia electrica.
+
+Su ecuacion es:
+\begin{equation*}
+    V=R*I
+\end{equation*}
+
+La ecuacion quiere decir que el voltaje o la tension entre esos dos puntos es igual al producto que hay entre la resistencia y la corriente electrica.
+
+
+
+
+
+\end{document}
