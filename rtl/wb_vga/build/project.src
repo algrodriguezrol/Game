@@ -1,0 +1,5 @@
+verilog work ../top.v
+verilog work ../vga.v
+verilog work ../divisor_frecuencia.v
+verilog work ../wb_vga.v
+verilog work ../imagen.v

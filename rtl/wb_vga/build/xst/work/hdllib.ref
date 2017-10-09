@@ -1,0 +1,5 @@
+MO wb_vga NULL ../wb_vga.v vlg32/wb__vga.bin 1507049975
+MO vga NULL ../vga.v vlg6A/vga.bin 1507049975
+MO imagen NULL ../imagen.v vlg2D/imagen.bin 1507049975
+MO top NULL ../top.v vlg6F/top.bin 1507049975
+MO divisor_frecuencia NULL ../divisor_frecuencia.v vlg54/divisor__frecuencia.bin 1507049975

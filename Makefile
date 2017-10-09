@@ -46,7 +46,9 @@ SRC=                                      \
 	../rtl/wb_i2c/i2c_controller_read_new.v	\
 	../rtl/wb_i2c/i2c_controller_write_lcd.v	\
 	../rtl/wb_i2c/i2c_controller_write_new.v	\
-	../rtl/wb_i2c/wb_i2c.v
+	../rtl/wb_i2c/wb_i2c.v				\
+	../rtl/wb_vga/vga.v				\
+	../rtl/wb_vga/divisor_frecuencia1.v  		
 
 #############################################################################
 # Synthesis constants
